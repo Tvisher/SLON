@@ -152,3 +152,23 @@ menuLinks.forEach(item => {
     item.onclick = toggler;
 })
 
+
+//Написание текста с определённой скоростью в милисекундах
+function writeLetters(selector, interval) {
+    let textElem = document.querySelector(selector);
+    let titleLetters = textElem.innerHTML.split('');
+    textElem.style.height = textElem.getBoundingClientRect().height + 'px';
+    textElem.innerHTML = '';
+    titleLetters.forEach(function (element, i) {
+        setTimeout(function () {
+            textElem.innerHTML += element;
+        }, interval * i++)
+    });
+}
+
+
+writeLetters('.header__title', 80);
+
+
+
+
