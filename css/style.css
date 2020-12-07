@@ -1581,9 +1581,7 @@ body.active {
   .about__text span {
     margin-left: 0;
   }
-}
 
-@media screen and (max-width: 400px) {
   .header {
     background-size: cover;
   }
@@ -1592,7 +1590,9 @@ body.active {
     padding-top: 80px;
     font-size: 30px;
   }
+}
 
+@media screen and (max-width: 400px) {
   .autor__info .autor__about {
     font-size: 15px;
   }
