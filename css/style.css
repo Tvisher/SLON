@@ -391,8 +391,8 @@ a {
 /*header*/
 
 .header {
-  height: 100vh;
   padding-top: 58px;
+  padding-bottom: 250px;
   background: url("../img/laptopImage.jpg") no-repeat center center;
   background-size: 100%;
   position: relative;
@@ -1478,6 +1478,10 @@ body.active {
     padding: 0 20px;
   }
 
+  .header {
+    padding-bottom: 80px;
+  }
+
   .cases__block-hov h3 {
     font-size: 26px;
   }
@@ -1580,8 +1584,13 @@ body.active {
 }
 
 @media screen and (max-width: 400px) {
+  .header {
+    background-size: cover;
+  }
+
   .header__title {
     padding-top: 80px;
+    font-size: 30px;
   }
 
   .autor__info .autor__about {
@@ -1591,10 +1600,6 @@ body.active {
   .cases__block-hov h3,
   .partners__item h5 {
     font-size: 16px;
-  }
-
-  .header__title {
-    font-size: 26px;
   }
 
   .cards__block,
