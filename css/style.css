@@ -393,7 +393,6 @@ a {
 .header {
   height: 100vh;
   padding-top: 58px;
-  min-height: 850px;
   background: url("../img/laptopImage.jpg") no-repeat center center;
   background-size: 100%;
   position: relative;
