@@ -391,8 +391,9 @@ a {
 /*header*/
 
 .header {
+  height: 100vh;
   padding-top: 58px;
-  padding-bottom: 250px;
+  min-height: 850px;
   background: url("../img/laptopImage.jpg") no-repeat center center;
   background-size: 100%;
   position: relative;
