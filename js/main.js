@@ -166,10 +166,11 @@ function writeLetters(selector, interval) {
     });
 }
 
+
+let titleHeader = document.querySelector('.header__title');
+writeLetters(titleHeader, 80);
 let windowWidth = document.documentElement.clientWidth;
 if (windowWidth > 768) {
-    let titleHeader = document.querySelector('.header__title');
-    writeLetters(titleHeader, 80);
     let cards = document.querySelectorAll('.cases__block-hov');
     cards.forEach(item => {
         item.addEventListener('mouseenter', () => {

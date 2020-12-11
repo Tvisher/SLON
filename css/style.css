@@ -893,8 +893,8 @@ a {
 
 .partners__item.active {
   opacity: 1;
-  -webkit-transform: scale3d(1.2, 1.2, 1.2);
-          transform: scale3d(1.2, 1.2, 1.2);
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+          transform: scale3d(1.1, 1.1, 1.1);
 }
 
 .partners__btn:hover {
@@ -1599,6 +1599,15 @@ body.active {
   .header__title {
     padding-top: 80px;
     font-size: 30px;
+  }
+
+  .form__wrapper input,
+  .form__wrapper textarea {
+    padding-left: 1em;
+  }
+
+  .partners__item h5 {
+    max-width: 156px;
   }
 }
 
