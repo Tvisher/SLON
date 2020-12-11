@@ -124,6 +124,8 @@ form.addEventListener('submit', (e) => {
 })
 
 
+
+//адаптивное меню бургер
 let burger = document.querySelector('.header__menu');
 let menu = document.querySelector('.menu');
 let body = document.querySelector('body');
@@ -144,18 +146,16 @@ const toggler = () => {
 }
 
 burger.onclick = toggler;
-
 overlay.onclick = toggler;
-
 let menuLinks = document.querySelectorAll('.menu__link');
 menuLinks.forEach(item => {
     item.onclick = toggler;
-})
+});
 
 
 //Написание текста с определённой скоростью в милисекундах
 function writeLetters(selector, interval) {
-    let textElem = document.querySelector(selector);
+    let textElem = selector;
     let titleLetters = textElem.innerHTML.split('');
     textElem.style.height = textElem.getBoundingClientRect().height + 'px';
     textElem.innerHTML = '';
@@ -166,9 +166,62 @@ function writeLetters(selector, interval) {
     });
 }
 
+let windowWidth = document.documentElement.clientWidth;
+if (windowWidth > 768) {
+    let titleHeader = document.querySelector('.header__title');
+    writeLetters(titleHeader, 80);
+    let cards = document.querySelectorAll('.cases__block-hov');
+    cards.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            writeLetters(item.querySelector('h3'), 100);
+            return;
+        }, { once: true });
+    });
+}
 
-writeLetters('.header__title', 80);
 
 
+
+
+
+
+function changer(elements, time) {
+    function timer(elem, iterator) {
+        setTimeout(() => {
+            elem.classList.toggle('active');
+            setTimeout(() => elem.classList.toggle('active'), time);
+        }, time * iterator);
+    }
+    elements.forEach((item, i) => {
+        timer(item, i);
+    });
+    setInterval(() => {
+        elements.forEach((item, i) => {
+            timer(item, i);
+        });
+    }, time * elements.length);
+
+}
+
+changer(document.querySelectorAll('.expertise__item'), 1200);
+changer(document.querySelectorAll('.partners__item'), 1500);
+
+
+//функция изменения opacity при прокрутке элемента
+const changeOpacity = (elements, defaultTime) => {
+    window.addEventListener('scroll', () => {
+        //позиция элемента меньше 0
+        let wrapperPosition = elements.getBoundingClientRect().top - document.documentElement.clientHeight;
+        let elementsOpacity = Math.abs(wrapperPosition / 1000) + defaultTime;
+        if (elementsOpacity > 1) {
+            elementsOpacity = 1;
+        }
+        elements.style.opacity = elementsOpacity;
+    });
+};
+
+
+let titles = document.querySelectorAll('.section__title');
+titles.forEach(item => changeOpacity(item, 0.3));
 
 
